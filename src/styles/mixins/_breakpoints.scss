@@ -1,0 +1,26 @@
+/*
+ * Credit: Bootstrap
+ * Source: https://github.com/twbs/bootstrap/blob/eec501552016064056c379fb9ae42e93225e6046/scss/mixins/_breakpoints.scss
+ */
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px))
+//    576px
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

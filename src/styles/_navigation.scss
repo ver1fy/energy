@@ -1,0 +1,118 @@
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background-color: $white;
+
+  @include media-breakpoint-up(sm) {
+    padding: 1rem 3rem;
+  }
+
+  &__brand {
+    margin-right: 3.5rem;
+  }
+
+  &__toggle {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: none; // Display will be controlled by toggling.
+    flex-basis: 100%;
+    flex-grow: 1;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-basis: auto;
+    }
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+
+  &__nav-link {
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    color: $dark-gray;
+    font-size: $font-size-base;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0.5rem;
+    }
+  }
+}
+
+// Future: make this more customisable with variables for sizes etc.
+.toggler {
+  cursor: pointer;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  border-radius: 3px;
+  margin: 0;
+  padding: 8px;
+  overflow: visible;
+  line-height: 1;
+
+  &__box {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 24px;
+  }
+
+  &__inner {
+    top: 50%;
+    display: block;
+    margin-top: -2px;
+    position: absolute;
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: $white;
+      
+
+    &,
+    &::before,
+    &::after {
+      position: absolute;
+      width: 32px;
+      height: 4px;
+      background-color: $primary;
+      border-radius: 4px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      bottom: -10px;
+    }
+  }
+}
