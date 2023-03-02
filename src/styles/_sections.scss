@@ -1,0 +1,19 @@
+.section {
+  padding: 4rem 0;
+}
+
+.services {
+  &__content {
+    display: block;
+
+    @include media-breakpoint-up(lg) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8rem;
+    }
+
+    & .card {
+      margin-top: 4rem;
+    }
+  }
+}
