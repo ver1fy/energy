@@ -1,0 +1,21 @@
+@import url('https://api.fonts.coollabs.io/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  font-family: $body-font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

@@ -1,4 +1,5 @@
 // Colour palette
+$black: #000;
 $white: #fff;
 $blue: #2b64b5;
 $dark-gray: #474747;
@@ -8,7 +9,12 @@ $primary: $blue;
 
 // Fonts
 $font-size-base: 1rem;
+$body-font-family: 'Roboto', sans-serif;
 
+// Container & grid
+$gutter-width: 15px;
+
+// Breakpoints
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -17,3 +23,6 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 ) !default;
+
+// Misc
+$zindex-max: 999;
