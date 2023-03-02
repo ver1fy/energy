@@ -3,6 +3,11 @@
 }
 
 .services {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
   &__content {
     display: block;
 
@@ -15,5 +20,23 @@
     & .card {
       margin-top: 4rem;
     }
+  }
+
+  &__bookmark {
+    display: none;
+    width: 100%;
+    max-width: 100px;
+    align-items: center;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+    }
+  }
+
+  &__bookmark-title {
+    color: $faded;
+    max-width: 100%; // TODO: Check this fix.
+    font-size: 4rem;
+    transform: rotate(-90deg);
   }
 }
