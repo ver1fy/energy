@@ -18,6 +18,14 @@
     font-size: 2.5rem;
   }
 
+  &__badges {
+    margin-top: 1.5rem;
+
+    & > .hero__badge:first-of-type {
+      margin-right: 0.5rem;
+    }
+  }
+
   &--overlay:before {
     // We'll use the old overlay technique.
     content: ' ';
